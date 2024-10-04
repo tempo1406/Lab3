@@ -1,39 +1,56 @@
 import React from 'react';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 const BookingForm = () => {
     return (
-        <div className="container">
-            <div className="row">
+        <Container>
+            <Row className="mb-3">
                 <h2 className="text-center">Book Your Table</h2>
-                <div className="row mb-3">
-                    <div className="col">
-                        <input type="text" className="form-control" placeholder="Your Name" aria-label="Your Name" />
-                    </div>
-                    <div className="col">
-                        <input type="email" className="form-control" placeholder="Your Email" aria-label="Your Email" />
-                    </div>
-                    <div className="col">
-                        <select id="inputState" className="form-select">
-                            <option selected>Select a Service</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                </div>
-                <div className="row mb-3">
-                    <div className="col">
-                        <textarea className="form-control" rows="5" placeholder="Please write your comment" aria-label="Please write your comment"></textarea>
-                    </div>
-                </div>
-                <div className="row mb-5">
-                    <div className="col">
-                        <input type="submit" className="btn btn-warning" value="Send Message" />
-                    </div>
-                </div>
-            </div>
-        </div>
+            </Row>
+            <Form>
+                <Row className="mb-3">
+                    <Col>
+                        <Form.Group controlId="formName">
+                            <Form.Control type="text" placeholder="Your Name" aria-label="Your Name" />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group controlId="formEmail">
+                            <Form.Control type="email" placeholder="Your Email" aria-label="Your Email" />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group controlId="formService">
+                            <Form.Select aria-label="Select a Service">
+                                <option>Select a Service</option>
+                                <option>...</option>
+                            </Form.Select>
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row className="mb-3">
+                    <Col>
+                        <Form.Group controlId="formComments">
+                            <Form.Control 
+                                as="textarea" 
+                                rows={5} 
+                                placeholder="Please write your comment" 
+                                aria-label="Please write your comment" 
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row className="mb-10">
+                    <Col>
+                        <Button variant="warning" type="submit">
+                            Send Message
+                        </Button>
+                    </Col>
+                </Row>
+            </Form>
+        </Container>
     );
 };
 

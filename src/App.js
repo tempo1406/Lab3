@@ -54,7 +54,7 @@ const App = () => {
         setCartItems(cartItems.filter((item) => item.title !== title));
     };
 
-    const totalItemsInCart = cartItems.length;
+    const totalItemsInCart = cartItems.reduce((total, item) => total + item.quantity, 0);
 
     return (
         <>
